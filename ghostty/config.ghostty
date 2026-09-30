@@ -1,0 +1,27 @@
+# ネオンパープル/ミント系。背景は黒に上書き
+theme = Aura
+background = #05060A
+foreground = #EDECEE
+cursor-color = #61FFCA
+cursor-style = block
+cursor-style-blink = false
+selection-background = #2A1F45
+selection-foreground = #FFFFFF
+
+# 分割線をネオンにすると「境界が光る」見た目になる
+split-divider-color = #A277FF
+unfocused-split-opacity = 0.88
+
+font-family = Menlo
+font-size = 13.5
+font-thicken = true
+bold-is-bright = true
+
+background-opacity = 0.96
+background-blur = 20
+window-padding-x = 10
+window-padding-y = 8
+window-padding-balance = true
+window-decoration = false
+scrollback-limit = 10000000
+

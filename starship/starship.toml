@@ -1,0 +1,92 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+command_timeout = 1000
+palette = "aura_neon"
+
+format = """
+$time$os$directory\
+$git_branch$git_status\
+$java$nodejs$python$golang$gcloud\
+$line_break\
+$character"""
+
+[palettes.aura_neon]
+violet = "#A277FF"
+mint   = "#61FFCA"
+cyan   = "#36F9F6"
+pink   = "#F92AAD"
+lime   = "#B4FB73"
+muted  = "#6D6D8A"
+ink    = "#05060A"
+
+[os]
+disabled = false
+style = "bg:violet fg:ink bold"
+format = "[$symbol]($style)"
+
+[os.symbols]
+Macos = " mac "
+
+[directory]
+style = "bg:violet fg:ink bold"
+format = "[ $path ]($style)"
+truncation_length = 0
+truncate_to_repo = false
+read_only = " RO"
+
+[git_branch]
+symbol = ""
+style = "fg:mint bold"
+format = " [on $branch]($style)"
+
+[git_status]
+style = "fg:pink"
+format = " [$all_status$ahead_behind]($style)"
+conflicted = "=$count "
+ahead = "^$count "
+behind = "v$count "
+diverged = "^$ahead_count v$behind_count "
+untracked = "?$count "
+stashed = "*$count "
+modified = "!$count "
+staged = "+$count "
+renamed = ">$count "
+deleted = "x$count "
+
+[java]
+symbol = ""
+style = "fg:cyan"
+format = " [java $version]($style)"
+
+[nodejs]
+symbol = ""
+style = "fg:lime"
+format = " [node $version]($style)"
+
+[python]
+symbol = ""
+style = "fg:cyan"
+format = " [py $version($virtualenv)]($style)"
+
+[golang]
+symbol = ""
+style = "fg:cyan"
+format = " [go $version]($style)"
+
+[gcloud]
+symbol = ""
+style = "fg:muted"
+format = " [gcp $project]($style)"
+disabled = true
+
+[time]
+disabled = false
+time_format = "%H:%M:%S"
+style = "fg:cyan"
+format = "[\\[$time\\]]($style) "
+
+[character]
+success_symbol = "[>](bold fg:mint)"
+error_symbol   = "[>](bold fg:pink)"
+vicmd_symbol   = "[<](bold fg:violet)"
